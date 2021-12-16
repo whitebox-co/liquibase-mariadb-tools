@@ -12,13 +12,13 @@
 # limitations under the License.
 #
 
-liquibase.ext.percona.PerconaAddColumnChange
-liquibase.ext.percona.PerconaAddForeignKeyConstraintChange
-liquibase.ext.percona.PerconaAddPrimaryKeyChange
-liquibase.ext.percona.PerconaAddUniqueConstraintChange
-liquibase.ext.percona.PerconaCreateIndexChange
-liquibase.ext.percona.PerconaDropColumnChange
-liquibase.ext.percona.PerconaDropForeignKeyConstraintChange
-liquibase.ext.percona.PerconaDropIndexChange
-liquibase.ext.percona.PerconaDropUniqueConstraintChange
-liquibase.ext.percona.PerconaModifyDataTypeChange
+liquibase.ext.mariadbtools.MariaDbToolsAddColumnChange
+liquibase.ext.mariadbtools.MariaDbToolsAddForeignKeyConstraintChange
+liquibase.ext.mariadbtools.MariaDbToolsAddPrimaryKeyChange
+liquibase.ext.mariadbtools.MariaDbToolsAddUniqueConstraintChange
+liquibase.ext.mariadbtools.MariaDbToolsCreateIndexChange
+liquibase.ext.mariadbtools.MariaDbToolsDropColumnChange
+liquibase.ext.mariadbtools.MariaDbToolsDropForeignKeyConstraintChange
+liquibase.ext.mariadbtools.MariaDbToolsDropIndexChange
+liquibase.ext.mariadbtools.MariaDbToolsDropUniqueConstraintChange
+liquibase.ext.mariadbtools.MariaDbToolsModifyDataTypeChange
