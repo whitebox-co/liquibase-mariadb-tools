@@ -1,11 +1,17 @@
+# liquibase-mariadb-tools
 FROM liquibase/liquibase:4.6.2
 
 RUN lpm add mysql --global
 
 USER root
+
 RUN apt-get update \
-    && apt-get -y install perl libdbd-mysql-perl \
-    && rm -rf /var/lib/apt/lists/*
+    && apt-get -y install perl libdb-mysql-perl curl apt-transport-https \
+    && mkdir /mariadb \
+    && wget https://dlm.mariadb.com/enterprise-release-helpers/mariadb_es_repo_setup -P /mariadb \
+    && chmod +x /mariadb/mariadb_repo_setup \
+    && ./mariadb/mariadb_repo_setup --token="CUSTOMER_DOWNLOAD_TOKEN" --apply \
+    && apt-get -y install MariaDB-Tools
 
 RUN ln -s /liquibase/percona-toolkit/bin/pt-online-schema-change /usr/local/bin/pt-online-schema-change
 

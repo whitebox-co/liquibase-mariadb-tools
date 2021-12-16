@@ -782,7 +782,7 @@ To run a single integration test, execute maven like this: `./mvnw verify -Prun-
 The full error message:
 
     Unexpected error running Liquibase: liquibase.exception.UnexpectedLiquibaseException:
-    java.lang.NoSuchMethodError: liquibase.ext.percona.PerconaDropColumnChange.getColumns()Ljava/util/List;
+    java.lang.NoSuchMethodError: liquibase.ext.mariadbtools.MariaDbToolsDropColumnChange.getColumns()Ljava/util/List;
 
 This means, you are trying to use version 1.1.1 of the extension with liquibase 3.2.x. This is an unsupported
 combination. For Liquibase 3.2.x, you'll need to use liquibase-percona 1.0.0
