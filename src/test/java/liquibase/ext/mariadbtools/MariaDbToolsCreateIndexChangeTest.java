@@ -86,6 +86,7 @@ public class MariaDbToolsCreateIndexChangeTest extends AbstractMariaDbToolsChang
         Assertions.assertEquals("mariadb-schema-change "
                 + "--alter-foreign-keys-method=auto "
                 + "--nocheck-unique-key-change "
+                + "--recursion-method=none "
                 + "--alter=\"ADD UNIQUE INDEX theIndexName (indexedColumn)\" "
                 + "--password=*** --execute "
                 + "h=localhost,P=3306,u=user,D=testdb,t=person",

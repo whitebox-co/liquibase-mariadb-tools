@@ -1,4 +1,5 @@
 # ghcr.io/whitebox-co/liquibase-mariadb-tools:latest
+# docker build -t ghcr.io/whitebox-co/liquibase-mariadb-tools:latest -f ./docker/Dockerfile .
 FROM liquibase/liquibase:4.6.2
 
 WORKDIR /liquibase

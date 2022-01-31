@@ -91,6 +91,7 @@ public class MariabDbToolsDropColumnChangeTest extends AbstractMariaDbToolsChang
         Assertions.assertEquals("mariadb-schema-change "
                 + "--alter-foreign-keys-method=auto "
                 + "--nocheck-unique-key-change "
+                + "--recursion-method=none "
                 + "--alter=\"DROP COLUMN col_test\" "
                 + "--password=*** --execute h=localhost,P=3306,u=user,D=testdb,t=person",
                 ((CommentStatement)statements[0]).getText());
@@ -109,6 +110,7 @@ public class MariabDbToolsDropColumnChangeTest extends AbstractMariaDbToolsChang
         Assertions.assertEquals("mariadb-schema-change "
                 + "--alter-foreign-keys-method=auto "
                 + "--nocheck-unique-key-change "
+                + "--recursion-method=none "
                 + "--alter=\"DROP COLUMN col_test\" "
                 + "--password=*** --execute h=localhost,P=3306,u=user,D=testdb,t=person",
                 ((CommentStatement)statements[0]).getText());

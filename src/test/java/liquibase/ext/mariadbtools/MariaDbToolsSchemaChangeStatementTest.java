@@ -56,7 +56,7 @@ public class MariaDbToolsSchemaChangeStatementTest {
         MariaDbToolsSchemaChangeStatement statement = new MariaDbToolsSchemaChangeStatement("testdb", "person",
                 "ADD COLUMN new_column INT NULL", Optional.empty());
         Assertions.assertEquals(
-                "[mariadb-schema-change, --alter-foreign-keys-method=auto, --nocheck-unique-key-change, --alter=ADD COLUMN new_column INT NULL, --password=root, --execute, h=localhost,P=3306,u=user,D=testdb,t=person]",
+                "[mariadb-schema-change, --alter-foreign-keys-method=auto, --nocheck-unique-key-change, --recursion-method=none, --alter=ADD COLUMN new_column INT NULL, --password=root, --execute, h=localhost,P=3306,u=user,D=testdb,t=person]",
                 String.valueOf(statement.buildCommand(database)));
     }
 
@@ -65,7 +65,7 @@ public class MariaDbToolsSchemaChangeStatementTest {
         MariaDbToolsSchemaChangeStatement statement = new MariaDbToolsSchemaChangeStatement("testdb", "person",
                 "ADD COLUMN new_column INT NULL", Optional.of("--per-change-option"));
         Assertions.assertEquals(
-                "[mariadb-schema-change, --per-change-option, --alter=ADD COLUMN new_column INT NULL, --password=root, --execute, h=localhost,P=3306,u=user,D=testdb,t=person]",
+                "[mariadb-schema-change, --per-change-option, --recursion-method=none, --alter=ADD COLUMN new_column INT NULL, --password=root, --execute, h=localhost,P=3306,u=user,D=testdb,t=person]",
                 String.valueOf(statement.buildCommand(database)));
     }
 
@@ -74,7 +74,7 @@ public class MariaDbToolsSchemaChangeStatementTest {
         MariaDbToolsSchemaChangeStatement statement = new MariaDbToolsSchemaChangeStatement("testdb", "person",
                 "ADD COLUMN new_column INT NULL, ADD COLUMN email VARCHAR(255) NULL", Optional.empty());
         Assertions.assertEquals(
-                "[mariadb-schema-change, --alter-foreign-keys-method=auto, --nocheck-unique-key-change, --alter=ADD COLUMN new_column INT NULL, ADD COLUMN email VARCHAR(255) NULL, --password=root, --execute, h=localhost,P=3306,u=user,D=testdb,t=person]",
+                "[mariadb-schema-change, --alter-foreign-keys-method=auto, --nocheck-unique-key-change, --recursion-method=none, --alter=ADD COLUMN new_column INT NULL, ADD COLUMN email VARCHAR(255) NULL, --password=root, --execute, h=localhost,P=3306,u=user,D=testdb,t=person]",
                 String.valueOf(statement.buildCommand(database)));
     }
 
@@ -83,7 +83,7 @@ public class MariaDbToolsSchemaChangeStatementTest {
         MariaDbToolsSchemaChangeStatement statement = new MariaDbToolsSchemaChangeStatement("testdb", "person",
                 "ADD COLUMN new_column INT NULL", Optional.empty());
         Assertions.assertEquals(
-                "mariadb-schema-change --alter-foreign-keys-method=auto --nocheck-unique-key-change --alter=\"ADD COLUMN new_column INT NULL\" --password=*** --execute h=localhost,P=3306,u=user,D=testdb,t=person",
+                "mariadb-schema-change --alter-foreign-keys-method=auto --nocheck-unique-key-change --recursion-method=none --alter=\"ADD COLUMN new_column INT NULL\" --password=*** --execute h=localhost,P=3306,u=user,D=testdb,t=person",
                 statement.printCommand(database));
     }
 
@@ -93,7 +93,7 @@ public class MariaDbToolsSchemaChangeStatementTest {
         MariaDbToolsSchemaChangeStatement statement = new MariaDbToolsSchemaChangeStatement("testdb", "person",
                 "ADD COLUMN new_column INT NULL", Optional.empty());
         Assertions.assertEquals(
-                "[mariadb-schema-change, --config, /tmp/percona.conf, --alter=ADD COLUMN new_column INT NULL, --password=root, --execute, h=localhost,P=3306,u=user,D=testdb,t=person]",
+                "[mariadb-schema-change, --config, /tmp/percona.conf, --recursion-method=none, --alter=ADD COLUMN new_column INT NULL, --password=root, --execute, h=localhost,P=3306,u=user,D=testdb,t=person]",
                 String.valueOf(statement.buildCommand(database)));
     }
 
@@ -103,7 +103,7 @@ public class MariaDbToolsSchemaChangeStatementTest {
         MariaDbToolsSchemaChangeStatement statement = new MariaDbToolsSchemaChangeStatement("testdb", "person",
                 "ADD COLUMN new_column INT NULL", Optional.empty());
         Assertions.assertEquals(
-                "[mariadb-schema-change, --config, /tmp/percona.conf, --alter-foreign-keys-method=auto, --alter=ADD COLUMN new_column INT NULL, --password=root, --execute, h=localhost,P=3306,u=user,D=testdb,t=person]",
+                "[mariadb-schema-change, --config, /tmp/percona.conf, --alter-foreign-keys-method=auto, --recursion-method=none, --alter=ADD COLUMN new_column INT NULL, --password=root, --execute, h=localhost,P=3306,u=user,D=testdb,t=person]",
                 String.valueOf(statement.buildCommand(database)));
     }
 
@@ -113,7 +113,7 @@ public class MariaDbToolsSchemaChangeStatementTest {
         MariaDbToolsSchemaChangeStatement statement = new MariaDbToolsSchemaChangeStatement("testdb", "person",
                 "ADD COLUMN new_column INT NULL", Optional.empty());
         Assertions.assertEquals(
-                "[mariadb-schema-change, --config, /tmp/file with spaces.conf, --alter=ADD COLUMN new_column INT NULL, --password=root, --execute, h=localhost,P=3306,u=user,D=testdb,t=person]",
+                "[mariadb-schema-change, --config, /tmp/file with spaces.conf, --recursion-method=none, --alter=ADD COLUMN new_column INT NULL, --password=root, --execute, h=localhost,P=3306,u=user,D=testdb,t=person]",
                 String.valueOf(statement.buildCommand(database)));
     }
 
@@ -123,7 +123,7 @@ public class MariaDbToolsSchemaChangeStatementTest {
         MariaDbToolsSchemaChangeStatement statement = new MariaDbToolsSchemaChangeStatement("testdb", "person",
                 "ADD COLUMN new_column INT NULL", Optional.empty());
         Assertions.assertEquals(
-                "[mariadb-schema-change, --config, /tmp/percona.conf, --alter=ADD COLUMN new_column INT NULL, --password=root, --execute, h=localhost,P=3306,u=user,D=testdb,t=person]",
+                "[mariadb-schema-change, --config, /tmp/percona.conf, --recursion-method=none, --alter=ADD COLUMN new_column INT NULL, --password=root, --execute, h=localhost,P=3306,u=user,D=testdb,t=person]",
                 String.valueOf(statement.buildCommand(database)));
     }
 
@@ -133,7 +133,7 @@ public class MariaDbToolsSchemaChangeStatementTest {
         MariaDbToolsSchemaChangeStatement statement = new MariaDbToolsSchemaChangeStatement("testdb", "person",
                 "ADD COLUMN new_column INT NULL", Optional.empty());
         Assertions.assertEquals(
-                "[mariadb-schema-change, --critical-load=Threads_running=160, --alter-foreign-keys-method=auto, --alter=ADD COLUMN new_column INT NULL, --password=root, --execute, h=localhost,P=3306,u=user,D=testdb,t=person]",
+                "[mariadb-schema-change, --critical-load=Threads_running=160, --alter-foreign-keys-method=auto, --recursion-method=none, --alter=ADD COLUMN new_column INT NULL, --password=root, --execute, h=localhost,P=3306,u=user,D=testdb,t=person]",
                 String.valueOf(statement.buildCommand(database)));
     }
 
@@ -143,7 +143,7 @@ public class MariaDbToolsSchemaChangeStatementTest {
         MariaDbToolsSchemaChangeStatement statement = new MariaDbToolsSchemaChangeStatement("testdb", "person",
                 "ADD COLUMN new_column INT NULL", Optional.empty());
         Assertions.assertEquals(
-                "[mariadb-schema-change, --arg1=val1 val2, --alter-foreign-keys-method=auto, --alter=ADD COLUMN new_column INT NULL, --password=root, --execute, h=localhost,P=3306,u=user,D=testdb,t=person]",
+                "[mariadb-schema-change, --arg1=val1 val2, --alter-foreign-keys-method=auto, --recursion-method=none, --alter=ADD COLUMN new_column INT NULL, --password=root, --execute, h=localhost,P=3306,u=user,D=testdb,t=person]",
                 String.valueOf(statement.buildCommand(database)));
     }
 }

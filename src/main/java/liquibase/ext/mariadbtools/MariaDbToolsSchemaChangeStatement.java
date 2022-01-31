@@ -136,6 +136,7 @@ public class MariaDbToolsSchemaChangeStatement extends RuntimeStatement {
             commands.addAll(tokenize(Configuration.getAdditionalOptions()));
         }
 
+        commands.add("--recursion-method=none");
         commands.add("--alter=" + alterStatement);
 
         StringBuilder dsn = new StringBuilder(200);
