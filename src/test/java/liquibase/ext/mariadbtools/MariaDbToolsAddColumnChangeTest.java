@@ -107,6 +107,7 @@ public class MariaDbToolsAddColumnChangeTest extends AbstractMariaDbToolsChangeT
         Assertions.assertEquals("mariadb-schema-change "
                 + "--alter-foreign-keys-method=auto "
                 + "--nocheck-unique-key-change "
+                + "--recursion-method=none "
                 + "--alter=\"ADD COLUMN new_column INT NULL\" "
                 + "--password=*** --execute "
                 + "h=localhost,P=3306,u=user,D=testdb,t=person",
@@ -125,6 +126,7 @@ public class MariaDbToolsAddColumnChangeTest extends AbstractMariaDbToolsChangeT
         Assertions.assertEquals("mariadb-schema-change "
                 + "--alter-foreign-keys-method=auto "
                 + "--nocheck-unique-key-change "
+                + "--recursion-method=none "
                 + "--alter=\"DROP COLUMN new_column\" "
                 + "--password=*** --execute "
                 + "h=localhost,P=3306,u=user,D=testdb,t=person",
@@ -144,6 +146,7 @@ public class MariaDbToolsAddColumnChangeTest extends AbstractMariaDbToolsChangeT
         Assertions.assertEquals("mariadb-schema-change "
                 + "--alter-foreign-keys-method=auto "
                 + "--nocheck-unique-key-change "
+                + "--recursion-method=none "
                 + "--alter=\"ADD COLUMN new_column INT NULL\" "
                 + "--password=*** --execute "
                 + "h=localhost,P=3306,u=user,D=testdb,t=person",
@@ -161,6 +164,7 @@ public class MariaDbToolsAddColumnChangeTest extends AbstractMariaDbToolsChangeT
         Assertions.assertEquals("mariadb-schema-change "
                 + "--alter-foreign-keys-method=auto "
                 + "--nocheck-unique-key-change "
+                + "--recursion-method=none "
                 + "--alter=\"DROP COLUMN new_column\" "
                 + "--password=*** --execute "
                 + "h=localhost,P=3306,u=user,D=testdb,t=person",

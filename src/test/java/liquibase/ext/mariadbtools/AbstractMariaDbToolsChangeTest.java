@@ -109,7 +109,8 @@ public abstract class AbstractMariaDbToolsChangeTest<T extends MariaDbToolsChang
                 + (change.getMariaDbToolsOptions() == null
                         ? "--alter-foreign-keys-method=auto --nocheck-unique-key-change"
                         : change.getMariaDbToolsOptions())
-                + " --alter=\"" + alter + "\" "
+                + " --recursion-method=none "
+                + "--alter=\"" + alter + "\" "
                 + "--password=*** --execute "
                 + "h=localhost,P=3306,u=user,D=" + targetDatabaseName + ",t=" + targetTableName,
                 ((MariaDbToolsSchemaChangeStatement)statements[0]).printCommand(database));

@@ -112,6 +112,7 @@ public class MariaDbToolsAddForeignKeyConstraintChangeTest extends AbstractMaria
         Assertions.assertEquals("mariadb-schema-change "
                 + "--alter-foreign-keys-method=auto "
                 + "--nocheck-unique-key-change "
+                + "--recursion-method=none "
                 + "--alter=\"" + alterText + "\" "
                 + "--password=*** --execute h=localhost,P=3306,u=user,D=testdb,t=address",
                 ((CommentStatement)statements[0]).getText());
@@ -129,6 +130,7 @@ public class MariaDbToolsAddForeignKeyConstraintChangeTest extends AbstractMaria
         Assertions.assertEquals("mariadb-schema-change "
                 + "--alter-foreign-keys-method=auto "
                 + "--nocheck-unique-key-change "
+                + "--recursion-method=none "
                 + "--alter=\"" + alterRollbackText + "\" "
                 + "--password=*** --execute h=localhost,P=3306,u=user,D=testdb,t=address",
                 ((CommentStatement)statements[0]).getText());
@@ -147,6 +149,7 @@ public class MariaDbToolsAddForeignKeyConstraintChangeTest extends AbstractMaria
         Assertions.assertEquals("mariadb-schema-change "
                 + "--alter-foreign-keys-method=auto "
                 + "--nocheck-unique-key-change "
+                + "--recursion-method=none "
                 + "--alter=\"" + alterText + "\" "
                 + "--password=*** --execute h=localhost,P=3306,u=user,D=testdb,t=address",
                 ((CommentStatement)statements[0]).getText());
@@ -163,6 +166,7 @@ public class MariaDbToolsAddForeignKeyConstraintChangeTest extends AbstractMaria
         Assertions.assertEquals("mariadb-schema-change "
                 + "--alter-foreign-keys-method=auto "
                 + "--nocheck-unique-key-change "
+                + "--recursion-method=none "
                 + "--alter=\"" + alterRollbackText + "\" "
                 + "--password=*** --execute h=localhost,P=3306,u=user,D=testdb,t=address",
                 ((CommentStatement)statements[0]).getText());
