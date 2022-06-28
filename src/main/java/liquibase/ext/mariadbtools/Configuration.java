@@ -40,7 +40,7 @@ public final class Configuration {
     /** Keep liquibase's database connection alive while mariadb-schema-change is running. */
     public static final String KEEPALIVE = "liquibase.mariadbtools.keepAlive";
 
-    private static final String DEFAULT_ADDITIONAL_OPTIONS = "--alter-foreign-keys-method=auto --nocheck-unique-key-change";
+    private static final String DEFAULT_ADDITIONAL_OPTIONS = "--preserve-triggers --alter-foreign-keys-method=auto --nocheck-unique-key-change";
 
     public static boolean failIfNoPT() {
         return Boolean.getBoolean(FAIL_IF_NO_MARIADB_TOOLS);
